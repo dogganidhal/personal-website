@@ -1,7 +1,7 @@
 package com.ndogga.personal.website.web.controller
 
 import com.ndogga.personal.website.service.ContactService
-import com.ndogga.personal.website.web.dto.ContactRequest
+import com.ndogga.personal.website.model.dto.ContactRequest
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping

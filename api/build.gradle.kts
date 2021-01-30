@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
 
 plugins {
     id("idea")
@@ -34,6 +35,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-mail")
     implementation("org.springframework.boot:spring-boot-starter-validation")
 
@@ -46,6 +48,11 @@ dependencies {
     developmentOnly("org.springframework.boot:spring-boot-devtools")
 
     kapt("org.springframework.boot:spring-boot-configuration-processor")
+
+    implementation("org.flywaydb:flyway-core")
+
+    implementation("org.xerial:sqlite-jdbc:3.32.3.2")
+    implementation("com.github.gwenn:sqlite-dialect:0.1.0")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
@@ -67,4 +74,8 @@ idea {
         sourceDirs = sourceDirs + file("build/tmp/kapt3/classes/main")
         generatedSourceDirs = sourceDirs + file("build/tmp/kapt3/classes/main")
     }
+}
+
+tasks.withType<BootBuildImage> {
+    imageName = "docker.nexus.ndogga.com/personal-website-api"
 }

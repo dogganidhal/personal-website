@@ -1,0 +1,20 @@
+version: '3'
+services:
+  api:
+    image: docker.nexus.ndogga.com/personal-website-api
+    environment:
+      SPRING_MAIL_HOST: ${SMTP_HOST}
+      SPRING_MAIL_PORT: ${SMTP_PORT}
+      SPRING_MAIL_USERNAME: ${SMTP_USERNAME}
+      SPRING_MAIL_PASSWORD: ${SMTP_PASSWORD}
+    expose:
+      - 8080
+  app:
+    build:
+      context: ./app
+      dockerfile: ./app/Dockerfile
+    expose:
+      - 80
+    environment:
+      API_URL: http://api:8080
+

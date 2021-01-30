@@ -1,14 +1,14 @@
 import { Container } from "inversify";
 import ResumeService from "./Data/Service/Resume";
-import StaticResumeService from "./Data/Service/Resume/StaticResumeService";
 import IoC from "./Misc/IoC";
+import ResumeServiceImpl from "./Data/Service/Resume/ResumeServiceImpl";
 
 
 
 export default function configureContainer(): Container {
   const container = new Container();
 
-  container.bind<ResumeService>(IoC.TResumeService).to(StaticResumeService);
+  container.bind<ResumeService>(IoC.TResumeService).to(ResumeServiceImpl);
 
   return container;
 }

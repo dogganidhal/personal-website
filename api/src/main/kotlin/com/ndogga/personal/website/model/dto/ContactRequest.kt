@@ -1,4 +1,4 @@
-package com.ndogga.personal.website.web.dto
+package com.ndogga.personal.website.model.dto
 
 import javax.validation.constraints.Email
 import javax.validation.constraints.NotBlank
