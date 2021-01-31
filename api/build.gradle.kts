@@ -5,6 +5,9 @@ plugins {
     id("idea")
     kotlin("jvm")
     kotlin("kapt")
+    kotlin("plugin.jpa")
+    kotlin("plugin.noarg")
+    kotlin("plugin.allopen")
     kotlin("plugin.spring")
     id("org.springframework.boot")
     id("io.spring.dependency-management")
@@ -38,6 +41,9 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-mail")
     implementation("org.springframework.boot:spring-boot-starter-validation")
+
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310")
 
     implementation("com.github.spullara.mustache.java:compiler:$mustacheVersion")
 

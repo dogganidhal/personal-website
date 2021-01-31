@@ -4,9 +4,5 @@ spring:
   datasource:
     url: jdbc:sqlite:personal-website.sqlite
     driver-class-name: org.sqlite.JDBC
-  jpa:
-    database-platform: org.hibernate.dialect.SQLiteDialect
-    hibernate:
-      ddl-auto: update
 
 com.ndogga.mail.recipient: me@ndogga.com

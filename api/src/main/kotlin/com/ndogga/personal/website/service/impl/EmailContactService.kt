@@ -4,7 +4,7 @@ import com.github.mustachejava.DefaultMustacheFactory
 import com.github.mustachejava.MustacheFactory
 import com.ndogga.personal.website.configuration.WebConfigurationProperties
 import com.ndogga.personal.website.service.ContactService
-import com.ndogga.personal.website.model.dto.ContactRequest
+import com.ndogga.personal.website.model.domain.ContactRequest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.slf4j.LoggerFactory
