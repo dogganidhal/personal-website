@@ -1,5 +1,6 @@
 package com.ndogga.personal.website.model.entity
 
+import com.fasterxml.jackson.annotation.JsonIgnore
 import javax.persistence.*
 
 
@@ -10,17 +11,17 @@ import javax.persistence.*
  */
 
 
-@Entity
-data class SkillSet(
+@Entity(name = "skill_set")
+data class SkillSetEntity(
     @Id
     @GeneratedValue
     val id: Int? = null,
     @Column
     val title: String,
-    @ElementCollection
-    val skills: Collection<String>,
+    @ElementCollection(fetch = FetchType.EAGER)
+    val skills: Set<String>,
     @Column
     val iconUrl: String,
     @ManyToOne
-    val user: User
+    val user: UserEntity
 )

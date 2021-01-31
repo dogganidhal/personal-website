@@ -1,6 +1,6 @@
 package com.ndogga.personal.website.service
 
-import com.ndogga.personal.website.model.dto.ContactRequest
+import com.ndogga.personal.website.model.domain.ContactRequest
 
 
 /**

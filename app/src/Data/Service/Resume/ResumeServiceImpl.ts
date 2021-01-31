@@ -5,27 +5,27 @@ import Experience from "../../Model/Experience.Model";
 import SkillSet from "../../Model/SkillSet.Model";
 import Axios, {AxiosResponse} from "axios";
 
+const BASE_URL = process.env["REACT_APP_API_URL"] || "http://localhost:8080";
+const API_KEY = process.env["REACT_APP_API_KEY"];
 
 @injectable()
 export default class ResumeServiceImpl implements ResumeService {
 
-  private static BASE_URL = process.env["API_URL"];
-
   public async getEducation(): Promise<Education[]> {
     const response = await Axios
-      .get<Education[]>(`${ResumeServiceImpl.BASE_URL}/resume/education`);
+      .get<Education[]>(`${BASE_URL}/api/resume/education?api-key=${API_KEY}`);
     return ResumeServiceImpl.extract(response);
   }
 
   public async getExperience(): Promise<Experience[]> {
     const response = await Axios
-      .get<Experience[]>(`${ResumeServiceImpl.BASE_URL}/resume/experience`);
+      .get<Experience[]>(`${BASE_URL}/api/resume/experience?api-key=${API_KEY}`);
     return ResumeServiceImpl.extract(response);
   }
 
   public async getSkillSets(): Promise<SkillSet[]> {
     const response = await Axios
-      .get<SkillSet[]>(`${ResumeServiceImpl.BASE_URL}/resume/skill-sets`);
+      .get<SkillSet[]>(`${BASE_URL}/api/resume/skill-sets?api-key=${API_KEY}`);
     return ResumeServiceImpl.extract(response);
   }
 

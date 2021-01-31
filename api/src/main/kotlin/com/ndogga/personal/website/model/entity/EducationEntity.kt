@@ -1,5 +1,6 @@
 package com.ndogga.personal.website.model.entity
 
+import com.fasterxml.jackson.annotation.JsonIgnore
 import javax.persistence.*
 
 
@@ -10,8 +11,8 @@ import javax.persistence.*
  */
 
 
-@Entity
-data class Education(
+@Entity(name = "education")
+data class EducationEntity(
     @Id
     @GeneratedValue
     val id: Int? = null,
@@ -24,7 +25,8 @@ data class Education(
     @Column
     val beginYear: Int,
     @Column
-    val graduationYear: Int,
+    val graduationYear: Int?,
     @ManyToOne
-    val user: User
+    @get:JsonIgnore
+    val user: UserEntity
 )

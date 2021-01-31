@@ -52,7 +52,9 @@ const useStyles = makeStyles(theme => {
     },
     skillPaperIcon: {
       color: theme.palette.primary.main,
-      marginRight: theme.spacing(1)
+      marginRight: theme.spacing(1),
+      width: theme.spacing(4),
+      height: theme.spacing(4)
     },
     skillPaperContent: {
       padding: theme.spacing(2),
@@ -69,7 +71,7 @@ const Skills: React.SFC<Props> = (props: Props) => {
   const classes = useStyles();
   const [isLoading, skills] = useSkillsLoader();
   const [localize] = useLocalization('resume');
-  
+
   return (
     <div {...props}>
       <Typography variant="subtitle2" className={classes.title}>
@@ -86,22 +88,11 @@ const Skills: React.SFC<Props> = (props: Props) => {
                 className={classes.skillPaper}
                 variant="outlined">
                 <div className={classes.skillPaperHeader}>
-                  {
-                    skillSet.icon.materialIconName && <Icon
-                      className={classes.skillPaperIcon}>{skillSet.icon.materialIconName}
-                    </Icon>
-                  }
-                  {
-                    skillSet.icon.fontAwesomeIconName && <FontAwesomeIcon
-                      icon={skillSet.icon.fontAwesomeIconName as IconName}
-                      className={classes.skillPaperIcon} />
-                  }
-                  {
-                    skillSet.icon.url && <img
-                      src={skillSet.icon.url}
-                      alt="Skill Icon"
-                      className={classes.skillPaperIcon} />
-                  }
+                  <img
+                    src={skillSet.iconUrl}
+                    alt="Skill Icon"
+                    color="red"
+                    className={classes.skillPaperIcon} />
                   <Typography variant="subtitle2" className={classes.skillPaperTitle}>
                     {skillSet.title.toUpperCase()}
                   </Typography>
@@ -110,9 +101,9 @@ const Skills: React.SFC<Props> = (props: Props) => {
                 <div className={classes.skillPaperContent}>
                   {
                     skillSet.skills.map((skill, index) => (
-                      <Typography 
-                        key={index} 
-                        variant="subtitle2" 
+                      <Typography
+                        key={index}
+                        variant="subtitle2"
                         className={classes.skillPaperContentText}>
                           • {skill}
                       </Typography>

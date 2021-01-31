@@ -1,5 +1,8 @@
-package com.ndogga.personal.website.model.entity
+package com.ndogga.personal.website.model.domain
 
+import com.fasterxml.jackson.annotation.JsonBackReference
+import com.fasterxml.jackson.annotation.JsonIgnore
+import com.fasterxml.jackson.annotation.JsonManagedReference
 import java.time.LocalDate
 import javax.persistence.*
 
@@ -11,23 +14,13 @@ import javax.persistence.*
  */
 
 
-@Entity
 data class Experience(
-    @Id
-    @GeneratedValue
-    val id: Int? = null,
-    @Column
+    @field:JsonIgnore
+    val id: Int,
     val jobTitle: String,
-    @Column
     val companyName: String,
-    @Column
     val companyUrl: String,
-    @Column
     val beginDate: LocalDate,
-    @Column
     val endDate: LocalDate,
-    @ElementCollection
-    val missions: Collection<String>,
-    @ManyToOne
-    val user: User
+    val missions: Collection<String>
 )
