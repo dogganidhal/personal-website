@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
-import ResumeService from "../Data/Service/Resume";
 import { useInstance } from "../Components/ContainerProvider";
 import IoC from "../Misc/IoC";
-import SkillSet from "../Data/Model/SkillSet.Model";
 import User from "../Data/Model/User.Model";
 import UserService from "../Data/Service/User";
 

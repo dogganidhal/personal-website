@@ -28,6 +28,8 @@ data class UserEntity(
     val age: Int,
     @Column
     val position: String,
+    @Column(name = "picture_url")
+    val pictureUrl: String,
     @OneToOne(mappedBy = "user")
     val description: UserDescriptionEntity
 )

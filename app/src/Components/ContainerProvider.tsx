@@ -7,18 +7,19 @@ type Props = {
   container: Container;
 };
 
-const ContainerProvider: React.FC<Props> = (props) => {
+const ContainerProvider: React.FC<Props> = ({ children, container }) => {
   return (
-    <InversifyContext.Provider value={{ container: props.container }}>
-      {props.children}
+    <InversifyContext.Provider value={{ container }}>
+      {children}
     </InversifyContext.Provider>
   );
 };
 
 export function useInstance<T>(identifier: interfaces.ServiceIdentifier<T>) {
   const { container } = useContext(InversifyContext);
+  console.log({ container })
   if (!container) { throw new Error(); }
   return container.get<T>(identifier);
-};
+}
 
 export default ContainerProvider;

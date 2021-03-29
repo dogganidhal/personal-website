@@ -18,5 +18,6 @@ data class User(
     val lastName: String,
     val age: Int,
     val position: String,
+    val pictureUrl: String,
     val description: UserDescription
 )

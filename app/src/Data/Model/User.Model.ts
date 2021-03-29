@@ -6,6 +6,7 @@ export default interface User {
 	readonly lastName: string;
 	readonly age: string;
 	readonly position: string;
+	readonly pictureUrl: string;
 	readonly description: UserDescription;
 }
 

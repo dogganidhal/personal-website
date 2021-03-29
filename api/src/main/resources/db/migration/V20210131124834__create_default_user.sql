@@ -1,5 +1,5 @@
-insert into "user" (id, first_name, last_name, position, age)
-values (1, 'Nidhal', 'Dogga', 'Full-stack software developer', 25);
+insert into "user" (id, first_name, last_name, position, age, picture_url)
+values (1, 'Nidhal', 'Dogga', 'Full-stack software developer', 25, 'https://storage.ndogga.com/personal/59632274_1231638833667162_437174314354081792_o.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=bOakzppSelaN8glVKS9gw8x2w8zhCrBp%2F20210329%2F%2Fs3%2Faws4_request&X-Amz-Date=20210329T161417Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=63eb8d7bf63ceba97a00c59c20f5fe072b9612998e8d034fdee13bd2e5f3760d');
 
 insert into api_key (id, user_id, key)
 values (1, 1, 'd9e062be-faa6-4228-8a09-92ce90ddf55a');

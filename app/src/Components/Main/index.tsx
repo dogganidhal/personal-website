@@ -77,7 +77,7 @@ const Main: React.FC = () => {
       {
         user && <div>
           <div className={classes.avatarContainer}>
-            <Avatar alt="Nidhal Dogga" src="/avatar.png" className={classes.avatar} />
+            <Avatar alt={`${user.firstName} ${user.lastName}`} src={user.pictureUrl} className={classes.avatar} />
             <Typography variant="subtitle2" className={classes.name}>{user.firstName} {user.lastName}</Typography>
             <Typography variant="subtitle2" className={classes.caption}>
               {localize`jobTitle`}

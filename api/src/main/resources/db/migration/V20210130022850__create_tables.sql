@@ -56,7 +56,8 @@ create table "user"
     first_name varchar(255),
     last_name varchar(255),
     age integer,
-    position varchar(255)
+    position varchar(255),
+    picture_url varchar(255)
 );
 
 create table user_education
