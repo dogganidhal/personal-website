@@ -75,7 +75,7 @@ const Experience: React.SFC<Props> = (props: Props) => {
             <Typography
               variant="subtitle2"
               className={classes.experienceStepPeriod}>
-              {step.beginDate} - {step.endDate}
+              {step.beginDate} - {step.endDate || "Présent"}
             </Typography>
             <div>
               {

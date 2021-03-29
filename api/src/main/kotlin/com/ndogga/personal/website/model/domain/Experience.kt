@@ -21,6 +21,6 @@ data class Experience(
     val companyName: String,
     val companyUrl: String,
     val beginDate: LocalDate,
-    val endDate: LocalDate,
+    val endDate: LocalDate?,
     val missions: Collection<String>
 )

@@ -6,8 +6,7 @@ import UserService from "./Data/Service/User";
 import UserServiceImpl from "./Data/Service/User/UserServiceImpl";
 
 
-
-export default function configureContainer(): Container {
+export function configureContainer(): Container {
   const container = new Container();
 
   container.bind<ResumeService>(IoC.TResumeService).to(ResumeServiceImpl);
@@ -15,3 +14,8 @@ export default function configureContainer(): Container {
 
   return container;
 }
+
+
+const CONTAINER = configureContainer();
+
+export default CONTAINER;

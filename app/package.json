@@ -29,7 +29,7 @@
     "typescript": "^3.7.4"
   },
   "scripts": {
-    "start": "REACT_APP_API_KEY=d9e062be-faa6-4228-8a09-92ce90ddf55a react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

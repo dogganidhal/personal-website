@@ -20,7 +20,6 @@ export const LanguageContext = createContext<LanguageContextType>({
 });
 
 const App: React.FC = () => {
-  const container = configureContainer();
   const mainTheme = createMuiTheme({
     palette: {
       primary: {
@@ -53,28 +52,26 @@ const App: React.FC = () => {
         setLang(lang);
       }
     }}>
-      <ContainerProvider container={container}>
-        <MuiThemeProvider theme={mainTheme}>
-          <BrowserRouter>
-            <Nav />
-            <Route exact path="/">
-              <Main />
-            </Route>
-            {
-              Router.routes
-                .filter(route => !route.external)
-                .map((route, index) => (
-                  <Route key={index} path={route.path}>
-                    {
-                      route.component && route.component({})
-                    }
-                  </Route>
-                ))
-            }
-            <Footer />
-          </BrowserRouter>
-        </MuiThemeProvider>
-      </ContainerProvider>
+      <MuiThemeProvider theme={mainTheme}>
+        <BrowserRouter>
+          <Nav />
+          <Route exact path="/">
+            <Main />
+          </Route>
+          {
+            Router.routes
+              .filter(route => !route.external)
+              .map((route, index) => (
+                <Route key={index} path={route.path}>
+                  {
+                    route.component && route.component({})
+                  }
+                </Route>
+              ))
+          }
+          <Footer />
+        </BrowserRouter>
+      </MuiThemeProvider>
     </LanguageContext.Provider>
   );
 }
