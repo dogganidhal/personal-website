@@ -40,11 +40,15 @@ values (1, '2017-05-25 00:00:00.000', 'Appsolute GmBH', 'https://appsolute.de', 
         1 );
 
 insert into experience (id, begin_date, company_name, company_url, end_date, job_title, user_id)
-values (3, '2019-09-01 00:00:00.000', 'BNP Paribas', 'https://bnpparibas.com', '2021-08-31 00:00:00.000', 'Développeur Web Java - Spring',
+values (2, '2018-06-01 00:00:00.000', 'Zenpark', 'https://zenpark.com', '2019-08-31 00:00:00.000', 'Développeur iOS & Android',
         1);
 
 insert into experience (id, begin_date, company_name, company_url, end_date, job_title, user_id)
-values (2, '2018-06-01 00:00:00.000', 'Zenpark', 'https://zenpark.com', '2019-08-31 00:00:00.000', 'Développeur iOS & Android',
+values (3, '2019-09-01 00:00:00.000', 'BNP Paribas', 'https://bnpparibas.com', '2021-08-31 00:00:00.000', 'Développeur Full-Stack',
+        1);
+
+insert into experience (id, begin_date, company_name, company_url, end_date, job_title, user_id)
+values (4, '2019-10-01 00:00:00.000', 'Prize & Fun', 'https://prize-and-fun.com', null, 'CTO & Co-Fondateur',
         1);
 
 insert into experience_missions (experience_id, missions)
@@ -74,6 +78,12 @@ values (3, 'Amélioration des tests de non régression en préparation pour les 
 insert into experience_missions (experience_id, missions)
 values (3, 'Maximiser l''automatisation des process de développement avec Jenkins et Ansible');
 
+insert into experience_missions (experience_id, missions)
+values (4, 'Valider le concept avec une version alpha en Flutter, Unity & Firebase');
+
+insert into experience_missions (experience_id, missions)
+values (4, 'Développer la version stable en microservices avec Spring, Kotlin & GraphQL');
+
 insert into user_experience (user_id, experience_id)
 values (1, 1);
 
@@ -82,6 +92,9 @@ values (1, 2);
 
 insert into user_experience (user_id, experience_id)
 values (1, 3);
+
+insert into user_experience (user_id, experience_id)
+values (1, 4);
 
 -- Skills
 
