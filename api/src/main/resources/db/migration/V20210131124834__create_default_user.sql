@@ -1,5 +1,5 @@
-insert into "user" (id, full_name, position)
-values (1, 'Nidhal Dogga', 'Full-stack software developer');
+insert into "user" (id, first_name, last_name, position, age)
+values (1, 'Nidhal', 'Dogga', 'Full-stack software developer', 25);
 
 insert into api_key (id, user_id, key)
 values (1, 1, 'd9e062be-faa6-4228-8a09-92ce90ddf55a');
@@ -86,34 +86,36 @@ values (1, 3);
 -- Skills
 
 insert into skill_set (id, icon_url, title, user_id)
-values (1, 'https://materialdesignicons.com/api/download/692F85E2-79A8-4207-ACF7-DEC8D675BE38/FFFFFF/1/FFFFFF/0/48', 'Développement Web', 1);
+values (1, 'https://materialdesignicons.com/api/download/692F85E2-79A8-4207-ACF7-DEC8D675BE38/F44A4A/1/F44A4A/0/48', 'Développement Web', 1);
 
 insert into skill_set (id, icon_url, title, user_id)
-values (2, 'https://materialdesignicons.com/api/download/8898488F-1BE6-40A0-84B7-1C0832AA4754/FFFFFF/1/FFFFFF/0/48', 'Développement Mobile', 1);
+values (2, 'https://materialdesignicons.com/api/download/8898488F-1BE6-40A0-84B7-1C0832AA4754/F44A4A/1/F44A4A/0/48', 'Développement Mobile', 1);
 
 insert into skill_set (id, icon_url, title, user_id)
-values (3, 'https://materialdesignicons.com/api/download/4B4C339D-D581-44A3-95DE-4254CC42AC8D/FFFFFF/1/FFFFFF/0/48', 'Développement Frontend', 1);
+values (3, 'https://materialdesignicons.com/api/download/4B4C339D-D581-44A3-95DE-4254CC42AC8D/F44A4A/1/F44A4A/0/48', 'Développement Frontend', 1);
 
 insert into skill_set (id, icon_url, title, user_id)
-values (4, 'https://materialdesignicons.com/api/download/CF07C502-388E-4A65-BD89-FACCFD00C245/FFFFFF/1/FFFFFF/0/48', 'DevOps', 1);
+values (4, 'https://materialdesignicons.com/api/download/CF07C502-388E-4A65-BD89-FACCFD00C245/F44A4A/1/F44A4A/0/48', 'DevOps', 1);
 
 insert into skill_set (id, icon_url, title, user_id)
-values (5, 'https://materialdesignicons.com/api/download/419C0A49-C751-4204-8C82-7E43B0896BD9/FFFFFF/1/FFFFFF/0/48', 'UI & UX', 1);
+values (5, 'https://materialdesignicons.com/api/download/419C0A49-C751-4204-8C82-7E43B0896BD9/F44A4A/1/F44A4A/0/48', 'UI & UX', 1);
 
 insert into skill_set (id, icon_url, title, user_id)
-values (6, 'https://materialdesignicons.com/api/download/9156AFAA-25BB-4E97-9EC8-BB9BE9AF60B0/FFFFFF/1/FFFFFF/0/48', 'And More', 1);
+values (6, 'https://materialdesignicons.com/api/download/9156AFAA-25BB-4E97-9EC8-BB9BE9AF60B0/F44A4A/1/F44A4A/0/48', 'Et plus', 1);
+
+-- Développement Web
 
 insert into skill_set_skills (skill_set_id, skills)
-values (1, 'Java / Spring Boot');
+values (1, 'Java, Kotlin, Spring Boot');
 
 insert into skill_set_skills (skill_set_id, skills)
-values (1, 'NodeJS / NestJS');
+values (1, 'NodeJS, NestJS, Typescript');
 
 insert into skill_set_skills (skill_set_id, skills)
-values (1, 'REST, GraphQL and gRPC APIs');
+values (1, 'REST, GraphQL, gRPC APIs');
 
 insert into skill_set_skills (skill_set_id, skills)
-values (1, 'SQL / NoSQL Databases');
+values (1, 'SQL, NoSQL Databases');
 
 insert into skill_set_skills (skill_set_id, skills)
 values (1, 'Microservices');
@@ -123,3 +125,97 @@ values (1, 'Async messaging');
 
 insert into user_skill_sets (user_id, skill_sets_id)
 values (1, 1);
+
+-- Développement Frontend
+
+insert into skill_set_skills (skill_set_id, skills)
+values (3, 'React.js');
+
+insert into skill_set_skills (skill_set_id, skills)
+values (3, 'Notions d''Angular');
+
+insert into skill_set_skills (skill_set_id, skills)
+values (3, 'MacOS natif');
+
+insert into skill_set_skills (skill_set_id, skills)
+values (3, 'Electron');
+
+insert into user_skill_sets (user_id, skill_sets_id)
+values (1, 3);
+
+-- Développement Mobile
+
+insert into skill_set_skills (skill_set_id, skills)
+values (2, 'Android natif (Java, Kotlin)');
+
+insert into skill_set_skills (skill_set_id, skills)
+values (2, 'iOS natif (Swift, Objective-C)');
+
+insert into skill_set_skills (skill_set_id, skills)
+values (2, 'MacOS natif (Swift, Objective-C)');
+
+insert into skill_set_skills (skill_set_id, skills)
+values (2, 'Electron');
+
+insert into user_skill_sets (user_id, skill_sets_id)
+values (1, 2);
+
+-- DevOps
+
+insert into skill_set_skills (skill_set_id, skills)
+values (4, 'Docker, Kubernetes');
+
+insert into skill_set_skills (skill_set_id, skills)
+values (4, 'Jenkins, Gitlab CI, Github Actions');
+
+insert into skill_set_skills (skill_set_id, skills)
+values (4, 'GCP, AWS');
+
+insert into skill_set_skills (skill_set_id, skills)
+values (4, 'Nginx');
+
+insert into skill_set_skills (skill_set_id, skills)
+values (4, 'Ansible');
+
+insert into user_skill_sets (user_id, skill_sets_id)
+values (1, 4);
+
+-- UI & UX
+
+insert into skill_set_skills (skill_set_id, skills)
+values (5, 'Sketch, Figma, Adobe XD');
+
+insert into skill_set_skills (skill_set_id, skills)
+values (5, 'App Prototyping');
+
+insert into skill_set_skills (skill_set_id, skills)
+values (5, 'Material Design');
+
+insert into skill_set_skills (skill_set_id, skills)
+values (5, 'Final Cut Pro');
+
+insert into user_skill_sets (user_id, skill_sets_id)
+values (1, 5);
+
+-- More
+
+insert into skill_set_skills (skill_set_id, skills)
+values (6, 'Git, Git-Flow');
+
+insert into skill_set_skills (skill_set_id, skills)
+values (6, 'Chatbots et assistants vocaux');
+
+insert into skill_set_skills (skill_set_id, skills)
+values (6, 'Méthodes agiles');
+
+insert into user_skill_sets (user_id, skill_sets_id)
+values (1, 6);
+
+-- User description
+
+insert into user_description (user_id, about_markdown)
+values (1, 'Bonjour, je m''appelle Nidhal. j''adore créer tout types de logiciel, de la plus simple des applications mobiles, jusqu''au plus complexe des backends. Je suis actuellement apprentis chez [BNP Paribas](https://bnpparibas.com/).
+
+N''hésitez pas jeter un coup d''œuil sur [mon CV](/resume), [mes projets](http://github.com/dogganidhal), ou [contactez moi](/contact).
+
+Vous pouvez aussi trouver [le code source de ce site](http://github.com/dogganidhal/personal-website), écrit en React et Typescript ❤️');

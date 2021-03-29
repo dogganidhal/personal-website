@@ -1,9 +1,6 @@
 package com.ndogga.personal.website.service.impl
 
-import com.ndogga.personal.website.model.domain.Education
-import com.ndogga.personal.website.model.domain.Experience
-import com.ndogga.personal.website.model.domain.SkillSet
-import com.ndogga.personal.website.model.domain.User
+import com.ndogga.personal.website.model.domain.*
 import com.ndogga.personal.website.model.entity.UserEntity
 import com.ndogga.personal.website.model.repository.*
 import com.ndogga.personal.website.service.UserService
@@ -19,7 +16,8 @@ class UserServiceImpl(
     private val userRepository: UserRepository,
     private val educationRepository: EducationRepository,
     private val experienceRepository: ExperienceRepository,
-    private val skillSetRepository: SkillSetRepository
+    private val skillSetRepository: SkillSetRepository,
+    private val userDescriptionRepository: UserDescriptionRepository
 ) : UserService {
 
     override suspend fun getUser(apiKey: UUID): User? = getUserFromApiKey(apiKey) { cast() }
@@ -42,6 +40,12 @@ class UserServiceImpl(
         skillSetRepository
             .findAllByUserId(id!!)
             .cast()
+    }
+
+    override suspend fun getUserDescription(apiKey: UUID): UserDescription? = getUserFromApiKey(apiKey) {
+        userDescriptionRepository
+            .findByUserId(id!!)
+            ?.cast()
     }
 
     private suspend fun <T> getUserFromApiKey(key: UUID, closure: UserEntity.() -> T): T? = runIO {

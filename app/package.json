@@ -22,13 +22,14 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-i18next": "^11.2.7",
+    "react-markdown": "^5.0.3",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.0",
     "reflect-metadata": "^0.1.13",
     "typescript": "^3.7.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "REACT_APP_API_KEY=d9e062be-faa6-4228-8a09-92ce90ddf55a react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

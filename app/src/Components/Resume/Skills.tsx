@@ -1,8 +1,6 @@
 import React, { HTMLAttributes } from "react";
-import {Typography, makeStyles, CircularProgress, Icon, Paper, Divider, Grid} from "@material-ui/core";
+import {Typography, makeStyles, CircularProgress, Paper, Divider, Grid} from "@material-ui/core";
 import useSkillsLoader from "../../Hooks/UseSkillsLoader";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconName } from "@fortawesome/free-solid-svg-icons";
 import useLocalization from "../../Hooks/UseLocalization";
 
 
@@ -42,7 +40,7 @@ const useStyles = makeStyles(theme => {
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'center',
-      verticalAlign: 'center',
+      justifyItems: 'center',
       padding: theme.spacing(2)
     },
     skillPaperTitle: {
@@ -53,8 +51,8 @@ const useStyles = makeStyles(theme => {
     skillPaperIcon: {
       color: theme.palette.primary.main,
       marginRight: theme.spacing(1),
-      width: theme.spacing(4),
-      height: theme.spacing(4)
+      width: theme.spacing(3),
+      height: theme.spacing(3),
     },
     skillPaperContent: {
       padding: theme.spacing(2),
@@ -91,7 +89,6 @@ const Skills: React.SFC<Props> = (props: Props) => {
                   <img
                     src={skillSet.iconUrl}
                     alt="Skill Icon"
-                    color="red"
                     className={classes.skillPaperIcon} />
                   <Typography variant="subtitle2" className={classes.skillPaperTitle}>
                     {skillSet.title.toUpperCase()}

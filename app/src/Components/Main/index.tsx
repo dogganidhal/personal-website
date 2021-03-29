@@ -1,7 +1,10 @@
 import React, { useState, useContext } from 'react';
-import { Card, makeStyles, Typography, Avatar, Divider } from '@material-ui/core';
+import {Card, makeStyles, Typography, Avatar, Divider, CircularProgress} from '@material-ui/core';
 import useLocalization from '../../Hooks/UseLocalization';
 import { LanguageContext } from '../App';
+import useUserLoader from "../../Hooks/UseUserLoader";
+import ReactMarkdown from 'react-markdown';
+
 
 const useStyles = makeStyles(theme => {
   return {
@@ -44,15 +47,17 @@ const useStyles = makeStyles(theme => {
     },
     content: {
       fontSize: 16,
-      color: theme.palette.grey[600]
-    },
-    linkSpan: {
       fontWeight: 500,
-      textDecoration: 'none',
-      '&:focus, &:hover, &:visited, &:link, &:active': {
-        textDecoration: 'none'
+      color: theme.palette.grey[600],
+      '& a': {
+        color: theme.palette.primary.main,
+        fontWeight: 500,
+        textDecoration: 'none',
+        '&:focus, &:hover, &:visited, &:link, &:active': {
+          textDecoration: 'none'
+        }
       }
-    }
+    },
   };
 });
 
@@ -60,33 +65,35 @@ const useStyles = makeStyles(theme => {
 const Main: React.FC = () => {
   const classes = useStyles();
   const [localize] = useLocalization('main');
-  const [Paragraph, setParagraph] = useState();
   const { lang } = useContext(LanguageContext);
+  const [loading, user] = useUserLoader();
 
-  import(`./Paragraph.${lang}`)
-    .then(module => setParagraph(module.default))
-    .catch(e => console.error(e));
 
   return (
     <div className={classes.container}>
-      <div className={classes.avatarContainer}>
-        <Avatar alt="Nidhal Dogga" src="/avatar.png" className={classes.avatar} />
-        <Typography variant="subtitle2" className={classes.name}>NIDHAL DOGGA</Typography>
-        <Typography variant="subtitle2" className={classes.caption}>
-          {localize`jobTitle`}
-        </Typography>
-      </div>
-      <Card variant="outlined" className={classes.card}>
-        <Typography variant="subtitle2" className={classes.title}>
-          {localize`aboutTitle`}
-        </Typography>
-        <Divider />
-        <div className={classes.contentContainer}>
-          {
-            Paragraph && <Paragraph />
-          }
+      {
+        loading && <CircularProgress />
+      }
+      {
+        user && <div>
+          <div className={classes.avatarContainer}>
+            <Avatar alt="Nidhal Dogga" src="/avatar.png" className={classes.avatar} />
+            <Typography variant="subtitle2" className={classes.name}>{user.firstName} {user.lastName}</Typography>
+            <Typography variant="subtitle2" className={classes.caption}>
+              {localize`jobTitle`}
+            </Typography>
+          </div>
+          <Card variant="outlined" className={classes.card}>
+            <Typography variant="subtitle2" className={classes.title}>
+              {localize`aboutTitle`}
+            </Typography>
+            <Divider />
+            <div className={classes.contentContainer}>
+              <ReactMarkdown className={classes.content} children={user.description.aboutMarkdown} />
+            </div>
+          </Card>
         </div>
-      </Card>
+      }
     </div>
   );
 }

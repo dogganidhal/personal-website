@@ -14,6 +14,9 @@ import javax.persistence.*
 
 data class User(
     val id: Int,
-    val fullName: String,
-    val position: String
+    val firstName: String,
+    val lastName: String,
+    val age: Int,
+    val position: String,
+    val description: UserDescription
 )

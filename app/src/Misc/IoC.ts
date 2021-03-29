@@ -2,7 +2,8 @@
 
 
 const IoC = {
-  TResumeService: Symbol('ResumeService')
+  TResumeService: Symbol('ResumeService'),
+  TUserService: Symbol('UserService')
 }
 
 

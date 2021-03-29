@@ -20,8 +20,14 @@ data class UserEntity(
     @Id
     @GeneratedValue
     val id: Int? = null,
+    @Column(name = "first_name")
+    val firstName: String,
+    @Column(name = "last_name")
+    val lastName: String,
     @Column
-    val fullName: String,
+    val age: Int,
     @Column
-    val position: String
+    val position: String,
+    @OneToOne(mappedBy = "user")
+    val description: UserDescriptionEntity
 )
