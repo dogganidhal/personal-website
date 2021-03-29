@@ -8,6 +8,6 @@ RUN gradle clean build
 
 FROM openjdk:15.0.1
 
-COPY --from=builder "/api/build/libs/api-*.jar" "/api/application.jar"
+COPY --from=builder "/api/build/libs/personal-website-api-*.jar" "/api/application.jar"
 
 CMD ["/usr/bin/java", "-jar", "/api/application.jar"]
