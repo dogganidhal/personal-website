@@ -1,6 +1,8 @@
-import React, { useState, useCallback } from "react";
-import { Card, makeStyles, Typography, Divider, TextField, Button } from '@material-ui/core';
+import React, {useState, useCallback, useEffect} from "react";
+import {Card, makeStyles, Typography, Divider, TextField, Button, Snackbar} from '@material-ui/core';
+import MuiAlert from "@material-ui/lab/Alert";
 import useLocalization from "../Hooks/UseLocalization";
+import useAxios from "axios-hooks";
 
 const useStyles = makeStyles(theme => {
   return {
@@ -52,70 +54,86 @@ const useStyles = makeStyles(theme => {
 const Contact: React.FC = () => {
   const classes = useStyles();
   const [localize] = useLocalization('contact');
+  const [{loading, data, error}, sendContactForm] = useAxios({
+    url: '/api/contact',
+    method: 'POST'
+  }, {
+    manual: true
+  });
 
-  const MAIL_TO_BASE_URI = 'mailto:me@ndogga.com';
-
+  const [successSnackbarOpen, setSuccessSnackbarOpen] = useState(false);
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [message, setMessage] = useState();
-  const [mailToUri, setMailToUri] = useState(MAIL_TO_BASE_URI);
 
-  const createMailToUri = useCallback(() => {
-    return `${MAIL_TO_BASE_URI}?\
-subject=${name} wants to get in touch&\
-body=${message} <br /> <br /> Name: ${name} <br /> Email: ${email}`;
-  }, [name, email, message]);
+  useEffect(() => {
+    setSuccessSnackbarOpen(data !== undefined && !error);
+  }, [data, error, successSnackbarOpen]);
 
-  return (
-    <Card variant="outlined" className={classes.card}>
-      <Typography variant="subtitle2" className={classes.title}>
-        {localize`title`}
-      </Typography>
-      <Divider />
-      <div className={classes.captionContainer}>
-        <pre>
-          <Typography variant="subtitle2" className={classes.content}>
-            {localize`caption`}
-          </Typography>
-        </pre>
-      </div>
-      <div className={classes.formContainer}>
-        <TextField
-          fullWidth
-          className={classes.formField}
-          label={localize`nameFieldLabel`}
-          variant="filled"
-          helperText={localize`nameFieldHelper`}
-          onChange={e => setName(e.target.value)}
-        />
-        <TextField
-          fullWidth
-          className={classes.formField}
-          label={localize`emailFieldLabel`}
-          variant="filled"
-          helperText={localize`emailFieldHelper`}
-          onChange={e => setEmail(e.target.value)}
-        />
-        <TextField
-          fullWidth
-          className={classes.formField}
-          label={localize`contentFieldLabel`}
-          multiline
-          variant="filled"
-          onChange={e => setMessage(e.target.value)}
-        />
-        <Button 
-          className={classes.submitButton}
-          color="primary"
-          size="large"
-          variant="text"
-          target="_blank"
-          href={createMailToUri()}>
-          {localize`submitButtonTitle`}
-        </Button>
-      </div>
-    </Card>
-  );
+  const submitContactForm = useCallback(() => sendContactForm({
+    data: { name, email, message }
+  }), [name, email, message]);
+
+  const closeSuccessSnackbar = (event?: React.SyntheticEvent, reason?: string) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setSuccessSnackbarOpen(false);
+  };
+
+  return <Card variant="outlined" className={classes.card}>
+    <Snackbar open={successSnackbarOpen} autoHideDuration={6000} onClose={closeSuccessSnackbar}>
+      <MuiAlert onClose={closeSuccessSnackbar} severity="success">
+        {localize`submitSuccessText`}
+      </MuiAlert>
+    </Snackbar>
+    <Typography variant="subtitle2" className={classes.title}>
+      {localize`title`}
+    </Typography>
+    <Divider />
+    <div className={classes.captionContainer}>
+      <pre>
+        <Typography variant="subtitle2" className={classes.content}>
+          {localize`caption`}
+        </Typography>
+      </pre>
+    </div>
+    <div className={classes.formContainer}>
+      <TextField
+        fullWidth
+        className={classes.formField}
+        label={localize`nameFieldLabel`}
+        variant="filled"
+        helperText={localize`nameFieldHelper`}
+        onChange={e => setName(e.target.value)}
+      />
+      <TextField
+        fullWidth
+        className={classes.formField}
+        label={localize`emailFieldLabel`}
+        variant="filled"
+        helperText={localize`emailFieldHelper`}
+        onChange={e => setEmail(e.target.value)}
+      />
+      <TextField
+        fullWidth
+        className={classes.formField}
+        label={localize`contentFieldLabel`}
+        multiline
+        variant="filled"
+        onChange={e => setMessage(e.target.value)}
+      />
+      <Button
+        disabled={loading}
+        className={classes.submitButton}
+        color="primary"
+        size="large"
+        variant="text"
+        onClick={submitContactForm}>
+        {localize`submitButtonTitle`}
+      </Button>
+    </div>
+  </Card>;
 }
 
 

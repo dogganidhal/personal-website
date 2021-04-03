@@ -24,7 +24,8 @@ export const localizations: Resource = {
       educationSectionTitle: "education",
       experienceSectionTitle: "experience",
       skillsSectionTitle: "skills",
-      certificatesSectionTitle: "certificates"
+      certificatesSectionTitle: "certificates",
+      noCertificatesPlaceholder: "None yet, but should have some soon 😉"
     },
     contact: {
       title: "Contact me",
@@ -38,6 +39,7 @@ Fill the form below to reach me out, I promise I will respond quickly
       emailFieldHelper: "So I know how to contact you afterward",
       contentFieldLabel: "Your message",
       submitButtonTitle: "Submit",
+      submitSuccessText: "Message sent successfully"
     }
   },
   fr: {
@@ -61,13 +63,14 @@ Fill the form below to reach me out, I promise I will respond quickly
       educationSectionTitle: "Éducation",
       experienceSectionTitle: "Éxperience",
       skillsSectionTitle: "Compétences",
-      certificatesSectionTitle: "Certifications"
+      certificatesSectionTitle: "Certifications",
+      noCertificatesPlaceholder: "Aucune encore, mais devrait en avoir bientôt 😉"
     },
     contact: {
       title: "Contacter moi",
       caption: `
-          Voulez vous me contacter ? Pour des raisons professionnelles, ou même personnelles ?
-          Remplissez le formulaire ci-dessous, je vous promets que je vous réponds vite
+Voulez vous me contacter ? Pour des raisons professionnelles, ou même personnelles ?
+Remplissez le formulaire ci-dessous, je vous promets que je vous réponds vite
         `.trim(),
       nameFieldLabel: "Prénom",
       nameFieldHelper: "Pour que sache comment vous appeler",
@@ -75,6 +78,7 @@ Fill the form below to reach me out, I promise I will respond quickly
       emailFieldHelper: "Pour que je sache comment vous contacter par la suite",
       contentFieldLabel: "Votre message",
       submitButtonTitle: "Envoyer",
+      submitSuccessText: "Message envoyé avec succès"
     }
   }
 };

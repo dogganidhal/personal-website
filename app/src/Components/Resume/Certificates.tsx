@@ -32,7 +32,7 @@ const Certificates: React.SFC<Props> = (props: Props) => {
         {localize`certificatesSectionTitle`.toUpperCase()}
       </Typography>
       <Typography variant="subtitle2" className={classes.comingSoonParagraph}>
-        None yet, but should have some soon 😉 
+        {localize`noCertificatesPlaceholder`}
       </Typography>
     </div>
   );

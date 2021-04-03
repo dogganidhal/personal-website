@@ -1,7 +1,7 @@
 import React, { useState, useContext, ReactNode } from "react";
-import { 
-  AppBar, Toolbar, makeStyles, Button, Icon, Menu, 
-  MenuItem, IconButton, Typography, withStyles, MenuProps 
+import {
+  AppBar, Toolbar, makeStyles, Button, Icon, Menu,
+  MenuItem, IconButton, Typography, withStyles, MenuProps
 } from "@material-ui/core";
 import { useLocation } from "react-router-dom";
 import Router from "../Navigator";
@@ -90,8 +90,9 @@ const Nav: React.FC = () => {
       open={Boolean(flagAnchorEl)}
       onClose={handleFlagClose}>
       {
-        i18n.languages.map(lang => (
+        i18n.languages.map((lang, index) => (
           <Button
+            key={index}
             disabled={lang === i18n.language}
             variant="text"
             color="primary"
@@ -219,7 +220,7 @@ const useStyles = makeStyles(theme => {
 const MobileNavButton: React.SFC<NavButtonProps> = ({ path, title, icon }: NavButtonProps) => {
   const classes = useStyles();
   const location = useLocation();
-  return <MenuItem 
+  return <MenuItem
     dense
     component='a'
     href={path}
