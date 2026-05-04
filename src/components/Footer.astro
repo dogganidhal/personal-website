@@ -1,0 +1,13 @@
+---
+import { t, type Lang } from '~/i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const year = new Date().getFullYear();
+---
+<footer class="w-full max-w-2xl mx-auto px-6 pb-8 mt-16 text-xs font-mono text-zinc-500">
+  <p>© {year} Nidhal Dogga · {t('footer.builtWith', lang)}</p>
+</footer>

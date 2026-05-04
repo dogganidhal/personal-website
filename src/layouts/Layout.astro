@@ -1,5 +1,7 @@
 ---
 import BaseHead from '~/components/BaseHead.astro';
+import Header from '~/components/Header.astro';
+import Footer from '~/components/Footer.astro';
 import { defaultLang, type Lang } from '~/i18n';
 
 interface Props {
@@ -20,8 +22,10 @@ const {
     <BaseHead title={title} description={description} lang={lang} />
   </head>
   <body class="min-h-screen flex flex-col font-sans bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 transition-colors">
-    <main class="flex-1 w-full max-w-2xl mx-auto px-6 py-16">
+    <Header lang={lang} />
+    <main class="flex-1 w-full max-w-2xl mx-auto px-6 py-12">
       <slot />
     </main>
+    <Footer lang={lang} />
   </body>
 </html>
