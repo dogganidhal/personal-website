@@ -15,6 +15,7 @@
     "node": ">=20"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.2",
     "@unocss/astro": "^66.6.8",
     "@unocss/preset-typography": "^66.6.8",
     "@unocss/preset-web-fonts": "^66.6.8",
