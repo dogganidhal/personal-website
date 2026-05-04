@@ -1,0 +1,51 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { Lang } from '~/i18n';
+
+interface Props {
+  entry: CollectionEntry<'experience'>;
+  lang: Lang;
+}
+
+const { entry, lang } = Astro.props;
+const { company, location, url, roles } = entry.data;
+
+function formatDate(ym: string, lang: Lang): string {
+  const [year, month] = ym.split('-').map(Number);
+  const date = new Date(Date.UTC(year, month - 1, 1));
+  return date.toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-US', {
+    month: 'short',
+    year: 'numeric',
+  });
+}
+
+function formatRange(start: string, end: string | undefined, lang: Lang): string {
+  const startStr = formatDate(start, lang);
+  const endStr = end
+    ? formatDate(end, lang)
+    : lang === 'fr'
+      ? 'Présent'
+      : 'Present';
+  return `${startStr} — ${endStr}`;
+}
+---
+<li>
+  <div class="flex items-baseline justify-between gap-4 flex-wrap">
+    <h3 class="font-medium text-zinc-900 dark:text-zinc-100">
+      {url
+        ? <a href={url} class="hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors">{company}</a>
+        : company}
+    </h3>
+    {location && <span class="font-mono text-xs text-zinc-500">{location}</span>}
+  </div>
+  <ul class="mt-2 space-y-1">
+    {roles.map((role) => (
+      <li class="flex items-baseline justify-between gap-4 flex-wrap text-sm">
+        <span class="text-zinc-700 dark:text-zinc-300">{role.title}</span>
+        <span class="font-mono text-xs text-zinc-500 whitespace-nowrap">
+          {formatRange(role.start, role.end, lang)}
+        </span>
+      </li>
+    ))}
+  </ul>
+</li>
