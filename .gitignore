@@ -38,3 +38,5 @@ _archive/**/build/
 _archive/**/dist/
 _archive/**/.gradle/
 _archive/**/out/
+_archive/**/HELP.md
+_archive/**/application-local*
