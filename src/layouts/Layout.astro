@@ -1,0 +1,27 @@
+---
+import BaseHead from '~/components/BaseHead.astro';
+import { defaultLang, type Lang } from '~/i18n';
+
+interface Props {
+  title?: string;
+  description?: string;
+  lang?: Lang;
+}
+
+const {
+  title = 'Nidhal Dogga',
+  description = 'Fullstack engineer in Paris. Backend at heart — DDD, distributed systems, software architecture.',
+  lang = defaultLang,
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang={lang}>
+  <head>
+    <BaseHead title={title} description={description} lang={lang} />
+  </head>
+  <body class="min-h-screen flex flex-col font-sans bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 transition-colors">
+    <main class="flex-1 w-full max-w-2xl mx-auto px-6 py-16">
+      <slot />
+    </main>
+  </body>
+</html>
