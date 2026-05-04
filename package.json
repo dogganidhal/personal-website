@@ -1,0 +1,29 @@
+{
+  "name": "ndogga-website",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@unocss/astro": "^66.6.8",
+    "@unocss/preset-typography": "^66.6.8",
+    "@unocss/preset-web-fonts": "^66.6.8",
+    "@unocss/reset": "^66.6.8",
+    "astro": "^6.2.2",
+    "unocss": "^66.6.8"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "typescript": "^6.0.3"
+  }
+}
