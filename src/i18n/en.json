@@ -8,5 +8,6 @@
   "section.experience": "Experience",
   "section.projects": "Projects",
   "section.contact": "Contact",
+  "hero.tagline": "Fullstack engineer in Paris. Backend at heart — DDD, distributed systems, software architecture.",
   "footer.builtWith": "Built with Astro and UnoCSS"
 }

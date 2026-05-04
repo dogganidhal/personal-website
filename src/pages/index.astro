@@ -1,11 +1,16 @@
 ---
 import Layout from '~/layouts/Layout.astro';
+import Hero from '~/components/sections/Hero.astro';
+import About from '~/components/sections/About.astro';
+import { t } from '~/i18n';
+
+const lang = 'en' as const;
 ---
 <Layout
-  title="Nidhal Dogga"
-  description="Fullstack engineer in Paris. Backend at heart — DDD, distributed systems, software architecture."
-  lang="en"
+  title="Nidhal Dogga · Software Engineer"
+  description={t('hero.tagline', lang)}
+  lang={lang}
 >
-  <h1 class="text-4xl font-semibold tracking-tight">Nidhal Dogga</h1>
-  <p class="text-zinc-600 dark:text-zinc-400 mt-2">Portfolio under construction.</p>
+  <Hero lang={lang} />
+  <About lang={lang} />
 </Layout>
