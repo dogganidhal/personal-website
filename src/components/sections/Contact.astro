@@ -1,0 +1,53 @@
+---
+import { CONTACT, SOCIALS } from '~/data/site';
+import { t, type Lang } from '~/i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const labels: Record<Lang, { email: string; phone: string; location: string }> = {
+  en: { email: 'Email', phone: 'Phone', location: 'Location' },
+  fr: { email: 'Email', phone: 'Tél.', location: 'Lieu' },
+};
+
+const github = SOCIALS.find((s) => s.label === 'GitHub')!;
+const linkedin = SOCIALS.find((s) => s.label === 'LinkedIn')!;
+const l = labels[lang];
+
+const linkClass =
+  'text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 underline underline-offset-2 decoration-zinc-400 hover:decoration-zinc-700 dark:hover:decoration-zinc-200 transition-colors';
+---
+<section class="mb-16">
+  <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-6">
+    {t('section.contact', lang)}
+  </h2>
+  <ul class="space-y-2 text-sm">
+    <li class="flex items-baseline gap-3 flex-wrap">
+      <span class="font-mono text-xs text-zinc-500 w-20 shrink-0">{l.email}</span>
+      <a href={`mailto:${CONTACT.email}`} class={linkClass}>{CONTACT.email}</a>
+    </li>
+    <li class="flex items-baseline gap-3 flex-wrap">
+      <span class="font-mono text-xs text-zinc-500 w-20 shrink-0">{l.phone}</span>
+      <a href={CONTACT.phoneHref} class={linkClass}>{CONTACT.phone}</a>
+    </li>
+    <li class="flex items-baseline gap-3 flex-wrap">
+      <span class="font-mono text-xs text-zinc-500 w-20 shrink-0">{l.location}</span>
+      <span class="text-zinc-700 dark:text-zinc-300">{CONTACT.location}</span>
+    </li>
+    <li class="flex items-baseline gap-3 flex-wrap">
+      <span class="font-mono text-xs text-zinc-500 w-20 shrink-0">{github.label}</span>
+      <a href={github.href} target="_blank" rel="noopener noreferrer" class={linkClass}>
+        {github.handle}
+      </a>
+    </li>
+    <li class="flex items-baseline gap-3 flex-wrap">
+      <span class="font-mono text-xs text-zinc-500 w-20 shrink-0">{linkedin.label}</span>
+      <a href={linkedin.href} target="_blank" rel="noopener noreferrer" class={linkClass}>
+        {linkedin.handle}
+      </a>
+    </li>
+  </ul>
+</section>
