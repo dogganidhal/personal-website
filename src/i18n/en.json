@@ -1,0 +1,12 @@
+{
+  "nav.home": "Home",
+  "nav.projects": "Projects",
+  "nav.contact": "Contact",
+  "lang.toggleLabel": "Switch language",
+  "theme.toggleLabel": "Toggle theme",
+  "section.about": "About",
+  "section.experience": "Experience",
+  "section.projects": "Projects",
+  "section.contact": "Contact",
+  "footer.builtWith": "Built with Astro and UnoCSS"
+}
