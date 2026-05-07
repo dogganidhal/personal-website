@@ -9,7 +9,6 @@ roles:
     start: "2019-09"
     end: "2021-08"
 highlights:
-  - Étude de découpage d'un monolithe vieillissant en microservices
-  - Renforcement de la couverture des tests de non-régression en amont de la migration
+  - Étude de découpage d'un monolithe vieillissant en microservices et renforcement des tests de non-régression en amont
   - Identification des processus métier et étude d'opportunité sur les moteurs de workflow (Camunda)
 ---

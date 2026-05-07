@@ -12,6 +12,5 @@ roles:
     start: "2018-05"
     end: "2018-09"
 highlights:
-  - Studied migrating the native iOS and Android apps to React Native
-  - Developed and maintained features on the native apps in parallel with the migration study
+  - Studied migrating the native iOS and Android apps to React Native while maintaining feature work on the native apps
 ---

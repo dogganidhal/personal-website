@@ -12,9 +12,7 @@ roles:
     start: "2023-03"
     end: "2023-10"
 highlights:
-  - Led the split of 70% of the legacy codebase into bounded contexts
-  - Led the implementation of the first DDD services
-  - Helped set up a "golden path" for creating state-of-the-art services
-  - Helped conceive a solid testing framework
-  - Developed and maintained features in Node.js + TypeScript
+  - Led the split of 70% of the legacy codebase into bounded contexts and shipped the first DDD services
+  - Established a "golden path" and testing framework for new services
+  - Built features across the stack in Node.js + TypeScript
 ---

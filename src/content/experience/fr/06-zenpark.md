@@ -12,6 +12,5 @@ roles:
     start: "2018-05"
     end: "2018-09"
 highlights:
-  - Étude de migration des apps natives iOS et Android vers React Native
-  - Développement et maintenance des fonctionnalités sur les apps natives en parallèle de l'étude
+  - Étude de migration des apps natives iOS et Android vers React Native, en parallèle de la maintenance des apps existantes
 ---

@@ -12,9 +12,7 @@ roles:
     start: "2023-03"
     end: "2023-10"
 highlights:
-  - Pilote du découpage de 70% du legacy en bounded contexts
-  - Pilote de la mise en place des premiers services DDD
-  - Mise en place d'un "golden path" pour les nouveaux services
-  - Conception d'un framework de tests robuste
-  - Développement et maintenance de fonctionnalités en Node.js + TypeScript
+  - Pilote du découpage de 70% du legacy en bounded contexts et de la mise en place des premiers services DDD
+  - Mise en place d'un "golden path" et d'un framework de tests pour les nouveaux services
+  - Développement de fonctionnalités sur l'ensemble de la stack en Node.js + TypeScript
 ---
