@@ -18,6 +18,8 @@ const experience = defineCollection({
     company: z.string(),
     location: z.string().optional(),
     url: z.string().url().optional(),
+    summary: z.string().optional(),
+    highlights: z.array(z.string()).default([]),
     lang: localeSchema,
     order: z.number().int(),
     roles: z.array(role).min(1),
