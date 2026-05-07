@@ -7,8 +7,20 @@ export const SITE = {
 } as const;
 
 export const SKILL_CHIPS: Record<Lang, readonly string[]> = {
-  en: ['Backend systems', 'Distributed systems', 'DDD', 'Software architecture'],
-  fr: ['Systèmes backend', 'Systèmes distribués', 'DDD', 'Architecture logicielle'],
+  en: [
+    'Backend systems',
+    'Distributed systems',
+    'DDD',
+    'Software architecture',
+    'Agentic AI & LLM apps',
+  ],
+  fr: [
+    'Systèmes backend',
+    'Systèmes distribués',
+    'DDD',
+    'Architecture logicielle',
+    'IA agentique & LLM',
+  ],
 } as const;
 
 export const CONTACT = {
