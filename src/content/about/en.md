@@ -2,8 +2,6 @@
 lang: en
 ---
 
-Fullstack engineer based in Paris, currently at Doctolib. Most of my time and energy goes into backend work — domain-driven design, distributed systems, and software architecture are the threads I keep pulling on.
+Senior backend engineer at Doctolib, in Paris. I'm at my best where complexity hides — domain-driven design, distributed systems, and what it actually takes to run agentic AI and LLM-based apps in production.
 
-A growing share of that work sits at the intersection of backend and AI. I work deeply with agentic systems and LLM-based applications — designing them, orchestrating tools and context, and operating them reliably in production.
-
-Lately I've been moving into open source. [Noddde](https://noddde.dev/) — *Functional DDD for TypeScript* — is my first framework, with more to come.
+On the side: [Noddde](https://noddde.dev/) — *Functional DDD for TypeScript*, my first OSS framework, with more to come.
