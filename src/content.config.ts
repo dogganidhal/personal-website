@@ -33,6 +33,7 @@ const projects = defineCollection({
     description: z.string(),
     lang: localeSchema,
     order: z.number().int(),
+    category: z.enum(['oss', 'project']).default('project'),
     url: z.string().url().optional(),
     repo: z.string().url().optional(),
     tags: z.array(z.string()).default([]),

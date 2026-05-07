@@ -1,20 +1,26 @@
 ---
 import { getCollection } from 'astro:content';
 import ProjectCard from '~/components/sections/ProjectCard.astro';
-import { t, type Lang } from '~/i18n';
+import { t, type Lang, type TranslationKey } from '~/i18n';
 
 interface Props {
   lang: Lang;
+  category: 'oss' | 'project';
+  headingKey: TranslationKey;
 }
 
-const { lang } = Astro.props;
-const entries = (await getCollection('projects', (e) => e.data.lang === lang))
-  .sort((a, b) => a.data.order - b.data.order);
+const { lang, category, headingKey } = Astro.props;
+const entries = (
+  await getCollection(
+    'projects',
+    (e) => e.data.lang === lang && e.data.category === category,
+  )
+).sort((a, b) => a.data.order - b.data.order);
 ---
 {entries.length > 0 && (
   <section class="mb-16">
     <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-6">
-      {t('section.projects', lang)}
+      {t(headingKey, lang)}
     </h2>
     <ul class="space-y-6">
       {entries.map((entry) => <ProjectCard entry={entry} lang={lang} />)}

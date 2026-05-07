@@ -6,6 +6,7 @@
   "theme.toggleLabel": "Toggle theme",
   "section.about": "About",
   "section.experience": "Experience",
+  "section.opensource": "Open Source",
   "section.projects": "Projects",
   "section.contact": "Contact",
   "hero.tagline": "Fullstack engineer in Paris. Backend at heart — DDD, distributed systems, software architecture.",
