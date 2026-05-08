@@ -1,9 +1,0 @@
-spring:
-  config:
-    use-legacy-processing: true
-  datasource:
-    url: jdbc:sqlite:personal-website.sqlite
-    driver-class-name: org.sqlite.JDBC
-
-springdoc.swagger-ui.path: /api/swagger-ui.html
-com.ndogga.mail.recipient: me@ndogga.com

@@ -1,0 +1,8 @@
+spring:
+  config:
+    use-legacy-processing: true
+  datasource:
+    url: jdbc:sqlite:personal-website.sqlite
+    driver-class-name: org.sqlite.JDBC
+
+com.ndogga.mail.recipient: me@ndogga.com

@@ -1,0 +1,21 @@
+---
+import LangSwitch from '~/components/LangSwitch.astro';
+import ThemeToggle from '~/components/ThemeToggle.astro';
+import type { Lang } from '~/i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const homeHref = lang === 'fr' ? '/fr/' : '/';
+---
+<header class="w-full max-w-2xl mx-auto px-6 pt-8 flex items-center justify-between">
+  <a href={homeHref} class="font-mono text-sm font-medium tracking-tight hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors" aria-label="Home">
+    nd
+  </a>
+  <nav class="flex items-center gap-1">
+    <LangSwitch lang={lang} />
+    <ThemeToggle lang={lang} />
+  </nav>
+</header>

@@ -1,0 +1,19 @@
+---
+import { localizedPath, locales, type Lang } from '~/i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const otherLang = locales.find((l) => l !== lang) as Lang;
+const otherHref = localizedPath(Astro.url.pathname, otherLang);
+---
+<a
+  href={otherHref}
+  class="inline-flex items-center justify-center px-2 h-9 rounded-md font-mono text-xs uppercase tracking-wide text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+  aria-label={`Switch to ${otherLang.toUpperCase()}`}
+  hreflang={otherLang}
+>
+  {otherLang}
+</a>

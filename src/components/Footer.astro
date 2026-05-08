@@ -1,0 +1,30 @@
+---
+import { SOCIALS } from '~/data/site';
+import { t, type Lang } from '~/i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const year = new Date().getFullYear();
+---
+<footer class="w-full max-w-2xl mx-auto px-6 pb-8 mt-8 text-xs font-mono">
+  <ul class="flex flex-wrap gap-x-5 gap-y-2 mb-4">
+    {SOCIALS.map((social) => (
+      <li>
+        <a
+          href={social.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+        >
+          {social.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+  <p class="text-zinc-500">
+    © {year} Nidhal Dogga · {t('footer.builtWith', lang)}
+  </p>
+</footer>

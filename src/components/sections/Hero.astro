@@ -1,0 +1,24 @@
+---
+import { SKILL_CHIPS } from '~/data/site';
+import { t, type Lang } from '~/i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const chips = SKILL_CHIPS[lang];
+---
+<section class="mb-16">
+  <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight">Nidhal Dogga</h1>
+  <p class="mt-4 text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed">
+    {t('hero.tagline', lang)}
+  </p>
+  <ul class="mt-6 flex flex-wrap gap-2">
+    {chips.map((chip) => (
+      <li class="font-mono text-xs px-2 py-1 rounded border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400">
+        {chip}
+      </li>
+    ))}
+  </ul>
+</section>

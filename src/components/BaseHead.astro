@@ -1,0 +1,53 @@
+---
+import { localizedPath, locales, type Lang } from '~/i18n';
+
+interface Props {
+  title: string;
+  description: string;
+  lang: Lang;
+}
+
+const { title, description } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const alternates = locales.map((l) => ({
+  hreflang: l,
+  href: new URL(localizedPath(Astro.url.pathname, l), Astro.site).toString(),
+}));
+const xDefaultHref = new URL(
+  localizedPath(Astro.url.pathname, 'en'),
+  Astro.site,
+).toString();
+---
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+
+<script is:inline>
+  (() => {
+    try {
+      const stored = localStorage.getItem('theme');
+      const theme = stored ?? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+      document.documentElement.dataset.theme = theme;
+    } catch {}
+  })();
+</script>
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalURL} />
+<link rel="icon" type="image/png" href="/favicon.png" />
+
+{alternates.map((alt) => (
+  <link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
+))}
+<link rel="alternate" hreflang="x-default" href={xDefaultHref} />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalURL} />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />

@@ -1,0 +1,13 @@
+{
+  "nav.home": "Accueil",
+  "nav.projects": "Projets",
+  "nav.contact": "Contact",
+  "lang.toggleLabel": "Changer de langue",
+  "theme.toggleLabel": "Changer le thème",
+  "section.about": "À propos",
+  "section.experience": "Expérience",
+  "section.projects": "Projets",
+  "section.contact": "Contact",
+  "hero.tagline": "Ingénieur backend & IA. Axé architecture — DDD, systèmes distribués et hautement scalables.",
+  "footer.builtWith": "Conçu avec Astro et UnoCSS"
+}

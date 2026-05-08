@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import ExperienceItem from '~/components/sections/ExperienceItem.astro';
+import { t, type Lang } from '~/i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const entries = (await getCollection('experience', (e) => e.data.lang === lang))
+  .sort((a, b) => a.data.order - b.data.order);
+---
+{entries.length > 0 && (
+  <section class="mb-16">
+    <h2 class="text-sm font-mono uppercase tracking-widest text-zinc-500 mb-6">
+      {t('section.experience', lang)}
+    </h2>
+    <ol class="space-y-8">
+      {entries.map((entry) => <ExperienceItem entry={entry} lang={lang} />)}
+    </ol>
+  </section>
+)}
