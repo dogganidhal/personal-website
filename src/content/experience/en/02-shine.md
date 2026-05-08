@@ -1,6 +1,6 @@
 ---
 company: Shine
-location: Paris, France
+location: Remote, France
 lang: en
 order: 2
 summary: Bank account for professionals

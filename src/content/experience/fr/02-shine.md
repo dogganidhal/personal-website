@@ -1,6 +1,6 @@
 ---
 company: Shine
-location: Paris, France
+location: Remote, France
 lang: fr
 order: 2
 summary: Compte bancaire pour les professionnels

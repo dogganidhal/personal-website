@@ -1,6 +1,6 @@
 ---
 company: Chiro (formerly Prize&Fun)
-location: Paris, France
+location: Remote, France
 lang: en
 order: 4
 summary: Sponsored game contests
