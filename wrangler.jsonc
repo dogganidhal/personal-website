@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/wrangler/config-schema.json",
-  "name": "ndogga-website",
+  "name": "personal-website",
   "compatibility_date": "2026-05-08",
   "assets": {
     "directory": "./dist"
