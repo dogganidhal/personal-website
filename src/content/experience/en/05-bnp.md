@@ -4,6 +4,7 @@ location: France
 lang: en
 order: 5
 summary: Investment strategies software
+stack: [Java, Spring Framework]
 roles:
   - title: Software Engineering Apprentice
     start: "2019-09"

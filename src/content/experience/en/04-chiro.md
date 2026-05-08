@@ -4,6 +4,7 @@ location: Paris, France
 lang: en
 order: 4
 summary: Sponsored game contests
+stack: [Java, Spring Boot, Flutter, AWS, GraphQL]
 roles:
   - title: CTO & Co-Founder
     start: "2019-09"

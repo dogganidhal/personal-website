@@ -4,6 +4,7 @@ location: Paris, France
 lang: en
 order: 3
 summary: Open Banking SaaS
+stack: [Java, Spring Boot, AWS]
 roles:
   - title: Software Engineer
     start: "2021-09"

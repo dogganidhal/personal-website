@@ -19,6 +19,7 @@ const experience = defineCollection({
     location: z.string().optional(),
     url: z.string().url().optional(),
     summary: z.string().optional(),
+    stack: z.array(z.string()).default([]),
     highlights: z.array(z.string()).default([]),
     lang: localeSchema,
     order: z.number().int(),

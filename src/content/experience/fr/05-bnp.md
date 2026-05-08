@@ -4,6 +4,7 @@ location: France
 lang: fr
 order: 5
 summary: Logiciel de stratégies d'investissement
+stack: [Java, Spring Framework]
 roles:
   - title: Apprenti ingénieur logiciel
     start: "2019-09"

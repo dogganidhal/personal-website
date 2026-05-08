@@ -4,6 +4,7 @@ location: Paris, France
 lang: en
 order: 2
 summary: Bank account for professionals
+stack: [Node.js, TypeScript, GCP]
 roles:
   - title: Senior Software Engineer
     start: "2023-11"

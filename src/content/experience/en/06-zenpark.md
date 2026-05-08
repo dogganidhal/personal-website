@@ -4,6 +4,7 @@ location: Paris, France
 lang: en
 order: 6
 summary: Parking optimization mobile app
+stack: [Swift, Java, UIKit, Android]
 roles:
   - title: Fullstack / Mobile Developer
     start: "2018-09"

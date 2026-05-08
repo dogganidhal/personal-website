@@ -4,6 +4,7 @@ location: Paris, France
 lang: fr
 order: 2
 summary: Compte bancaire pour les professionnels
+stack: [Node.js, TypeScript, GCP]
 roles:
   - title: Ingénieur logiciel senior
     start: "2023-11"

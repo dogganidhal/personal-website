@@ -4,6 +4,7 @@ location: Paris, France
 lang: fr
 order: 6
 summary: App mobile d'optimisation de stationnement
+stack: [Swift, Java, UIKit, Android]
 roles:
   - title: Développeur fullstack / mobile
     start: "2018-09"
