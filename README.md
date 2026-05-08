@@ -56,18 +56,18 @@ status: live    # or 'archived'
 
 Same pattern for experience entries (`src/content/experience/{en,fr}/0X-company.md`). For experience, multiple roles at the same company nest under one entry via `roles: [{ title, start, end? }]` — `end` omitted means the role is current.
 
-## Deployment — Cloudflare Pages
+## Deployment — Cloudflare (Workers Static Assets)
 
-Connect the repo in the Cloudflare dashboard: **Pages → Create new project → Connect to Git**.
+Connect the repo in the Cloudflare dashboard: **Workers & Pages → Create → Connect to Git**.
 
 | Setting | Value |
 | --- | --- |
 | Build command | `pnpm build` |
-| Build output directory | `dist` |
+| Deploy command | `npx wrangler versions upload` *(default)* |
 | Root directory | `/` |
 | Env: `NODE_VERSION` | `22.12.0` |
 
-Pushes to `main` deploy to production. Pull requests get preview URLs at `<branch>.<project>.pages.dev`.
+Asset routing is driven by [`wrangler.jsonc`](./wrangler.jsonc), which points at `./dist` (the Astro build output). Pushes to `main` deploy to production; pull requests get preview URLs.
 
 ## DNS migration (Firebase → Cloudflare)
 
