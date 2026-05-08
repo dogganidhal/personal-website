@@ -8,6 +8,6 @@
   "section.experience": "Experience",
   "section.projects": "Projects",
   "section.contact": "Contact",
-  "hero.tagline": "Backend & AI engineer in Paris. Architecture-first — DDD, distributed and highly scalable systems.",
+  "hero.tagline": "Backend & AI engineer. Architecture-first — DDD, distributed and highly scalable systems.",
   "footer.builtWith": "Built with Astro and UnoCSS"
 }

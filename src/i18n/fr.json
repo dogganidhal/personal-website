@@ -8,6 +8,6 @@
   "section.experience": "Expérience",
   "section.projects": "Projets",
   "section.contact": "Contact",
-  "hero.tagline": "Ingénieur backend & IA à Paris. Axé architecture — DDD, systèmes distribués et hautement scalables.",
+  "hero.tagline": "Ingénieur backend & IA. Axé architecture — DDD, systèmes distribués et hautement scalables.",
   "footer.builtWith": "Conçu avec Astro et UnoCSS"
 }
