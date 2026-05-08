@@ -6,7 +6,7 @@ Static, bilingual (EN + FR), light/dark theme with no flash on load. Built with 
 
 ## Local development
 
-Requires Node 20+ and pnpm.
+Requires Node 22.12+ and pnpm.
 
 ```bash
 pnpm install
@@ -65,7 +65,7 @@ Connect the repo in the Cloudflare dashboard: **Pages → Create new project →
 | Build command | `pnpm build` |
 | Build output directory | `dist` |
 | Root directory | `/` |
-| Env: `NODE_VERSION` | `20` |
+| Env: `NODE_VERSION` | `22.12.0` |
 
 Pushes to `main` deploy to production. Pull requests get preview URLs at `<branch>.<project>.pages.dev`.
 
